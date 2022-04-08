@@ -20,3 +20,9 @@ if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyCon
 }
 
 ######SAMBA-WINDOWS-SERVER
+
+######RENAME-PC-HOSTNAME-BY-CMD
+hostname
+<copy hostname>
+WMIC computersystem where caption='current_pc_name' rename new_pc_name
+
