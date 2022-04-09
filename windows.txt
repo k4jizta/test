@@ -21,8 +21,20 @@ if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyCon
 
 ######SAMBA-WINDOWS-SERVER
 
+Computer Configuration\Windows Settings\Security Settings\Local Policies\Security Options\Accounts: Limit local account use of blank passwords to console logon only
+or
+Конфигурация компьютера -> Конфигурация Windows -> Параметры безопасности -> Локальные политики -> Параметры безопасности -> Учетные записи: разрешить использования пустых паролей только при консольном входе
+
+Начиная с Windows 7 ресурсы C$, D$ и.т.д по умолчанию существуют но не доступны. Чтобы их реально задействовать необходимо редактирование реестра.
+По пути 
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
+Надо создать параметр LocalAccountTokenFilterPolicy и установить его в 1.
+
+
+
 ######RENAME-PC-HOSTNAME-BY-CMD
+!!!command prompt by administrator
 hostname
 <copy hostname>
-WMIC computersystem where caption='current_pc_name' rename new_pc_name
+WMIC computersystem where caption='copied hostname' rename new_pc_name
 
