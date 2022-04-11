@@ -1,1 +1,7 @@
-1
+apt install apache2 php php7.4
+
+vim /var/www/html/index.php
+
+<?php
+phpinfo();
+?>
