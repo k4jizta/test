@@ -1,0 +1,27 @@
+Установить:
+    Веб-сервер
+        Общие HTTP-компоненты
+            Документ по умолчанию
+            Статические ресурсы
+        Безопасность
+            Фильтрация запросов
+            Базовая аутентификация
+            Аутентификация Windows
+        Разработка приложений
+            .NET Extensibility 4.5
+            .NET Extensibility
+            ASP.NET 4.7
+            ASP.NET
+            Дополнительные модули ISAPI
+            Фильтры ISAPI
+            Протокол WebSocket
+    Инструменты управления
+        Консоль управления IIS
+        IIS скрипты и инструменты управления
+        Сервис управления
+
+
+cd c:\inetpub\wwwrot
+echo "<BR>It is currently <%= Time() %> on <%= Date() %>.<BR>" > test.asp
+
+more info: https://techexpert.tips/ru/iis-ru/%d0%b2%d0%ba%d0%bb%d1%8e%d1%87%d0%b5%d0%bd%d0%b8%d0%b5-asp-%d0%bd%d0%b0-iis/
