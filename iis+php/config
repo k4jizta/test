@@ -6,7 +6,29 @@ https://windows.php.net/downloads/releases/php-8.1.4-nts-Win32-vs16-x64.zip
 https://aka.ms/vs/17/release/VC_redist.x64.exe
 
 
-После завершения установки Visual Studio нам необходимо добавить каталог PHP в переменную среды PATH. Доступ к окну свойств системы. Получите доступ к вкладке Advanced и нажмите кнопку переменных среды.
+После завершения установки Visual Studio нам необходимо добавить каталог PHP в переменную среды PATH. Доступ к окну свойств системы. Получите доступ к вкладке Advanced и нажмите кнопку переменных среды. 
+
+Написать
+;C:\PHP
+
+Переименовать PHP.INI-PRODUCTION на PHP.INI и отредактировать файл php.ini
+
+{
+date.timezone = America/Sao_Paulo
+fastcgi.impersonate = 1
+cgi.fix_pathinfo=1
+cgi.force_redirect = 0
+extension_dir = "ext"
+extension=bz2
+extension=curl
+extension=gd2
+extension=ldap
+extension=mbstring
+extension=mysqli
+extension=openssl
+}
+
+
 
 Handler Mappings - Add Module Mapping
 
