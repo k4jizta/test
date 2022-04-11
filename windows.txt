@@ -38,3 +38,12 @@ hostname
 <copy hostname>
 WMIC computersystem where caption='copied hostname' rename new_pc_name
 
+######WSUS CLIENT (сервер обновлений)
+
+Computer Configuration --> Administrative Templates --> Windows Components --> Windows Update --> Configure Automatic Updates
+Computer Configuration --> Administrative Templates --> Windows Components --> Windows Update --> Specify intranet Microsoft update service location
+http://192.168.31.115:8530
+
+To manually initiate detection by the WSUS server
+wuauclt.exe /detectnow
+
