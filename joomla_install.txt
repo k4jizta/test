@@ -1,0 +1,52 @@
+###Обнови пакеты
+
+sudo apt update -y && sudo apt upgrade -y
+
+###Установи Apache2 и PHP
+
+sudo apt install apache2 libapache2-mod-php7.4 openssl php-imagick php7.4-common php7.4-curl php7.4-gd php7.4-imap php7.4-intl php7.4-json php7.4-ldap php7.4-mbstring php7.4-mysql php7.4-pgsql php-ssh2 php7.4-sqlite3 php7.4-xml php7.4-zip
+
+sudo systemctl enable apache2 --now
+
+###Установи и настрой MariaDB
+
+sudo apt install mariadb-server
+
+sudo mysql_secure_installation
+
+Нажми [ENTER] когда спросит root password и нажми ‘Y’ чтобы назначить пароль root. Во всех послующих пунктах ставь ‘Y’
+
+sudo mysql -u root -p //пароль, который ты указывал пунктом ранее
+
+MariaDB [(none)]> create user 'USER_NAME'@'localhost' identified by 'PASSWORD'; // Fill fields 'USERNAME' and 'PASSWORD'
+MariaDB [(none)]> CREATE DATABASE joomla_db;
+MariaDB [(none)]> GRANT ALL ON joomla_db.* TO ‘joomla_user’@’localhost’ IDENTIFIED BY ‘StrongP@ssword’;
+MariaDB [(none)]> FLUSH PRIVILEGES;
+MariaDB [(none)]> EXIT;
+
+###Скачай Joomla
+
+//оф сайт "забанен", если знаешь как скачать можешь скачать с помощью утилиты wget, либо, через флешку (как? -- хз)
+
+sudo mkdir /var/www/html/joomla
+sudo unzip Joomla_3-9-26-Stable-Full_Package.zip -d /var/www/html/joomla
+
+sudo chown -R www-data:www-data /var/www/html/joomla
+sudo chmod -R 755 /var/www/html/joomla
+
+sudo systemctl restart apache2
+
+###настройка Apache for Joomla
+
+sudo nano /etc/apache2/sites-available/joomla.conf
+
+//надо создать файл joomla.conf или скачать готовый и перекинуть по пути '/etc/apache2/sites-available/'
+
+sudo a2ensite joomla.conf
+sudo a2enmod rewrite
+
+sudo systemctl restart apache2
+
+http://ip_address/joomla
+
+при установке используй имя пользователя joomla_user и пароль StrongP@ssw0rd, которые были заданы в БД. в качестве имени БД используй joomla_db
