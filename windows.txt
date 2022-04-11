@@ -1,3 +1,31 @@
+
+######RENAME-PC-HOSTNAME-BY-CMD
+!!!command prompt by administrator
+hostname
+<copy hostname>
+WMIC computersystem where caption='copied hostname' rename new_pc_name
+=============================================================================
+
+######WSUS CLIENT (сервер обновлений)
+
+Computer Configuration --> Administrative Templates --> Windows Components --> Windows Update --> Configure Automatic Updates
+Computer Configuration --> Administrative Templates --> Windows Components --> Windows Update --> Specify intranet Microsoft update service location
+http://192.168.31.115:8530
+
+To manually initiate detection by the WSUS server
+// Чтобы насильно инициализировать обнаружение wsus сервер
+wuauclt.exe /detectnow
+=============================================================================
+
+######USER GPO
+//эти не брать, а то лицо сгрызу
+User Configuration --> Policies --> Administrative Tempalates --> Desktop --> Hide and disable all items on the desktop
+User Configuration --> Policies --> Administrative Tempalates --> Desktop --> Remove Recycle Bin icon from desktop
+######COMPUTER GPO
+//эти не брать, а то лицо сгрызу
+Computer Configuration --> Windows Settings --> Security Settings --> Local Policies --> Security Options --> Shutdown: Allows system to be shutdown without having to log in
+=============================================================================
+
 ######OPENSSH-WINDOWS-SERVER
 
 #install openssh server 
@@ -31,24 +59,3 @@ or
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 Надо создать параметр LocalAccountTokenFilterPolicy и установить его в 1.
 =============================================================================
-
-
-######RENAME-PC-HOSTNAME-BY-CMD
-!!!command prompt by administrator
-hostname
-<copy hostname>
-WMIC computersystem where caption='copied hostname' rename new_pc_name
-=============================================================================
-
-######WSUS CLIENT (сервер обновлений)
-
-Computer Configuration --> Administrative Templates --> Windows Components --> Windows Update --> Configure Automatic Updates
-Computer Configuration --> Administrative Templates --> Windows Components --> Windows Update --> Specify intranet Microsoft update service location
-http://192.168.31.115:8530
-
-To manually initiate detection by the WSUS server
-wuauclt.exe /detectnow
-=============================================================================
-
-
-
