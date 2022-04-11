@@ -1,0 +1,18 @@
+Скачать PHP
+https://windows.php.net/downloads/releases/php-8.1.4-nts-Win32-vs16-x64.zip
+Скопировать содержимое архива в C:\PHP
+
+Скачать vc_redist
+https://aka.ms/vs/17/release/VC_redist.x64.exe
+
+
+После завершения установки Visual Studio нам необходимо добавить каталог PHP в переменную среды PATH. Доступ к окну свойств системы. Получите доступ к вкладке Advanced и нажмите кнопку переменных среды.
+
+Handler Mappings - Add Module Mapping
+
+• Request Path - *.php
+• Module - FastCGIModule
+• Executable - C:\php\php-cgi.exe
+• Name - PHP
+
+more info: https://techexpert.tips/ru/windows-ru/%d1%83%d1%81%d1%82%d0%b0%d0%bd%d0%be%d0%b2%d0%ba%d0%b0-php-%d0%bd%d0%b0-windows-server-iis/
