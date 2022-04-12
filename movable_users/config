@@ -1,0 +1,7 @@
+создать шару на DC
+                   Computer Configuration --> Profiles --> Administartive Template --> System --> User Profile
+групповые политики Политики\Административные шаблоны\Система\Профили пользователей
+
+указать \\SERVERNAME\FOLDER\%username%
+
+в пользвателя вписать \\SERVERNAME\FOLDER\%username%
