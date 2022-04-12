@@ -15,6 +15,8 @@ http://192.168.31.115:8530
 To manually initiate detection by the WSUS server
 // Чтобы насильно инициализировать обнаружение wsus сервер
 wuauclt.exe /detectnow
+    
+    more info: https://docs.microsoft.com/en-us/windows/deployment/update/waas-manage-updates-wsus
 =============================================================================
 
 ######USER GPO
