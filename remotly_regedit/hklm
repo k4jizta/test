@@ -1,4 +1,4 @@
-HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment
+[HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]     //это не брать, а то лицо сгрызу
 
 и создайте параметр PROMPT типа REG_EXPAND_SZ, которому нужно присвоить одно из следующих значений:
 
