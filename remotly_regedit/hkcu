@@ -1,0 +1,6 @@
+[HKCU/SOFTWARE/Microsoft/Windows/CurrentVersion/Run]
+
+reg_sz
+
+name: CMD
+data: HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.jpeg\Shell
