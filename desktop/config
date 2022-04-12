@@ -1,0 +1,28 @@
+gpo для пользователя
+
+User Configuration --> Windows Settings --> Folder Redirections --> Desktop
+
+Properties 
+Setting: Basic - Redirect everyone's Folder 
+Target folder location: Create a folder for each user under the root path
+Root Path: \\SERVERNAME\FOLDER
+
+SETTINGS: Grant the user exclusive rights to Desktop -- OFF
+================
+
+User Configuration --> Administrative Template --> Network --> Offline files
+
+Synchronize all offline files before logging off -- Enable
+Synchronize all offline files when logging on -- Enable
+
+Права доступа до папки 
+
+— Синхронизировать автономные файлы при входе в систему — включено
+— Синхронизация всех автономных файлов перед выходом из системы — включено
+— Синхронизировать автономные файлы перед приостановкой — включено — быстрая
+— Действия при отключения от сервера — включено — работать автономно
+— Нестандартные действия при отключении от сервера — включено — работать автономно
+— Удалить «Сделать доступными автономно» — включено
+— Не делать перенаправляемые папки достуными в автономном режиме автоматически — отключено
+
+more info: https://blinmen.ru/peremeshhaemyjj-profil-i-perenapravlenie-papok-polzovatelejj/
