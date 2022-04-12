@@ -1,4 +1,4 @@
-[HKCU/SOFTWARE/Microsoft/Windows/CurrentVersion/Run]
+[HKCU/SOFTWARE/Microsoft/Windows/CurrentVersion/Run]  //это не брать, а то лицо сгрызу
 
 reg_sz
 
