@@ -1,0 +1,5 @@
+[HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion/Policies/System] LocalAccountTokenFilterPolicy = 1
+
+mmc 
+ctl-m
+services --> connect to  another computer [wincli]
