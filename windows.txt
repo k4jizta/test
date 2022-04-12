@@ -20,12 +20,12 @@ wuauclt.exe /detectnow
 =============================================================================
 
 ######USER GPO
-//эти не брать, а то лицо сгрызу
-User Configuration --> Policies --> Administrative Tempalates --> Desktop --> Hide and disable all items on the desktop
-User Configuration --> Policies --> Administrative Tempalates --> Desktop --> Remove Recycle Bin icon from desktop
+
+User Configuration --> Policies --> Administrative Tempalates --> Desktop --> Hide and disable all items on the desktop     //это не брать, а то лицо сгрызу
+User Configuration --> Policies --> Administrative Tempalates --> Desktop --> Remove Recycle Bin icon from desktop          //это не брать, а то лицо сгрызу 
 ######COMPUTER GPO
-//эти не брать, а то лицо сгрызу
-Computer Configuration --> Windows Settings --> Security Settings --> Local Policies --> Security Options --> Shutdown: Allows system to be shutdown without having to log in
+
+Computer Configuration --> Windows Settings --> Security Settings --> Local Policies --> Security Options --> Shutdown: Allows system to be shutdown without having to log in       //это не брать, а то лицо сгрызу
 =============================================================================
 
 ######OPENSSH-WINDOWS-SERVER
