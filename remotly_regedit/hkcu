@@ -3,4 +3,4 @@
 reg_sz
 
 name: CMD
-data: HKEY_LOCAL_MACHINE\SOFTWARE\Classes\SystemFileAssociations\.jpeg\Shell
+data: "C:\Windows\System32\cmd.exe"
