@@ -1,0 +1,21 @@
+1. Настройте IP-адресацию. Проверьте связь командой ping. Запишите MAC-адрес компьютера
+  int __
+  ip addr __
+
+2. Настройте функцию PortSecurity на порту Fa0/6 таким образом, чтобы при смене MAC-адреса компьютера порт блокировался, но не переходил в состояние Shutdown. Смените MAC-адрес компьютера. Проверьте блокировку порта. Верните предыдущий MAC-адрес. Проверьте работоспособность порта.
+
+  int __
+  switchport mode access
+  switchport port-security maximum 2
+
+3.	Сохраните конфигурации коммутатора и маршрутизатора.
+  write
+  copy running-config startup-config
+
+4. Настройте функцию PortSecurity на порту Fa0/6 таким образом, чтобы при смене MAC-адреса компьютера порт физически отключался. Смените MAC-адрес, проверьте отключение порта. Верните MAC-адрес. Включите порт вручную.
+  
+  int fa0/6
+  switchport port-security mac-address sticky 
+  switchport port-security violation shutdown
+  
+  clear port-security [all|configured|dynamic|sticky] [address <mac>|interface <int-id>]
