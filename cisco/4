@@ -11,20 +11,20 @@
   no shut
   
   int fa__
-  switchmode port access
-  switchmode access vlan 10
+  switchport mode access
+  switchport access vlan 10
   
 3. Настройте транковый канал. Проверьте соединения с помощью Ping
   int vlan __
   ip addr
   
-  switchmode port mode trunk
-  switchmode trunk encapsulation dot1q (?)
-  switchmode port trunk allowed vlan 10,20
+  switchport mode trunk
+  switchport trunk encapsulation dot1q (?)
+  switchport trunk allowed vlan 10,20
 
 4. Перемещая один из ПК из VLAN10 во VLAN20 продемонстрируйте изменение в результатах команды ping. Перемещать ПК можно либо физическим переключением проводов, либо переносом порта в другой VLAN  
   int fa__
-  switchmode port access
-  switchmode access vlan 10
+  switchport mode access
+  switchport access vlan 10
 
 maybe more info: https://geek-speak.ru/forums/topic/%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D1%81%D0%B5%D1%82%D0%B5%D0%B9-vlan-%D0%B8-%D1%82%D1%80%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%8B%D1%85-%D0%BA%D0%B0%D0%BD%D0%B0/
