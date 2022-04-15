@@ -1,0 +1,32 @@
+1. Настройте время в устройствах. Задайте имена коммутатору и маршрутизатору по схеме «ВашаФамилияS» и «ВашаФамилияR».
+  conf t
+  clock set 13:12:00 23 august 2018
+  hostname R1
+  
+2.	Настройте IPv4-адресацию согласно таблице. Проверьте соединения с помощью ping. Защитите паролями консольное подключение и вход в привилегированный режим. Пароли сохранить в шифрованном виде
+  int __
+    ip address __
+    no shut
+  line con0
+    password __
+  enable password __
+  service password-encryption
+  
+  ip default-gateway __
+  
+
+3. Настройте доступ к устройствам по протоколу SSH
+  enable
+  clock set 17:10:00 28 Aug 2009
+  configure terminal
+  ip domain name test.dom
+  crypto key generate rsa
+  service password-encryption
+  username user privilege 15 password 7 Pa$$w0rd
+  aaa new-model
+  line vty 0 4
+    transport input ssh
+    logging synchronous
+    exec-timeout 60 0
+   
+ 4. I DONT FCKN KNOW
