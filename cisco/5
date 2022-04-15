@@ -16,7 +16,7 @@
   switchmode access vlan 10
 
 4. Разрешите прохождение через транковые каналы только VLAN30
-  switchmode port mode trunk
-  switchmode trunk encapsulation dot1q (?)
-  switchmode port trunk allowed vlan 30
+  switchport mode trunk
+  switchport trunk encapsulation dot1q (?)
+  switchport trunk allowed vlan 30
   
