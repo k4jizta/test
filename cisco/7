@@ -1,0 +1,37 @@
+1.	Настройте IP-адресацию
+  int __
+  ip add 192.168.0.1 255.255.255.0
+
+2.	Добавьте соответствующие VLAN на коммутаторе. Настройте подынтерфейсы на маршрутизаторе R1 с помощью инкапсуляции 802.1Q. Проверьте работоспособность схемы с помощью tracert
+configure terminal
+    S1
+  interface vlan 10
+  ip address 192.168.10.2 255.255.255.0
+  exit
+  interface vlan 30
+  ip address 192.168.20.2 255.255.255.0
+  
+  int g__
+  switchport mode trunk
+  switchport trunk encapsulation dot1q
+  spanning-tree portfast trunk
+  
+    R1
+  interface g0/1
+  no ip address
+  duplex auto
+  speed auto
+  interface g0/1.10
+  encapsulation dot1q 1
+  ip address 172.17.10.1 255.255.255.0
+  interface g0/1.30
+  encapsulation dot1q 30
+  ip address 172.17.30.0 255.255.255.0
+  
+3. Назначьте пароль на консольное подключение 
+  line con0
+    password __
+  service password-encryption
+  
+4. Назначьте пароль на вход в привилегированный режим
+  enable password __
