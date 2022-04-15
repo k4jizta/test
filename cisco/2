@@ -1,0 +1,22 @@
+1. Настройте время в устройствах. Задайте имена коммутатору и маршрутизатору по схеме «ВашаФамилияS» и «ВашаФамилияR».
+  conf t
+  clock set 13:12:00 23 august 2018
+  hostname R1
+  
+2. Настройте IPv6-адресацию согласно таблице. Проверьте соединения с помощью Tracert.
+  ipv6 unicast-routing
+  int ___
+  ipv6 address ___
+  
+3. Защитите доступ к устройствам с помощью паролей
+  Router(config)#line console 0
+  Router(config-line)#password MyPassword
+  Router(config-line)#login
+
+4. Идентифицируйте устройства с помощью таблицы MAC-адресов коммутатора
+
+  int fa0/1
+  switchport mode access
+  switchport port-security
+  switchport port-security mac-address sticky 
+  do show mac-address table
