@@ -1,1 +1,33 @@
+1.Настройте время в устройствах. Задайте имена коммутатору и маршрутизатору.
+  conf t
+  clock set 13:12:00 23 august 2018
+  hostname R1
+  
+2.Настройте IP-адресацию. Проверьте соединения с помощью Tracert. Настройте доступ к одному из устройств по Telnet.
+  int __
+  ip add 192.168.0.1 255.255.255.0
+  username net_admin privilege 1 password cisco для логина в телнете\ssh
+  line vty 0 5
+  transport input telnet
+  login local
+  end
+  wr
+  
+3.Настройте подключение ко второму устройству по SSH
+  
+  enable
+  clock set 17:10:00 28 Aug 2009
+  configure terminal
+  ip domain name test.dom
+  crypto key generate rsa
+  service password-encryption
+  username user privilege 15 password 7 Pa$$w0rd
+  aaa new-model
+  line vty 0 4
+    transport input ssh
+    logging synchronous
+    exec-timeout 60 0
 
+4.Ограничьте число неправильных попыток подключения по SSH. 2 неудачные попытки и бан на 60 сек.
+  ip ssh authentication-retries 2
+  ip ssh time-out 60
