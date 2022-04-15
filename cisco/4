@@ -1,0 +1,28 @@
+1. Настройте IP-адресацию согласно таблице
+  int __
+  ip addr __
+  
+2. Настройте VLAN согласно предложенной схеме
+  vlan _
+  name __
+  
+  int vlan _
+  ip addr __ __
+  no shut
+  
+  int fa__
+  switchmode port access
+  switchmode access vlan 10
+  
+3. Настройте транковый канал. Проверьте соединения с помощью Ping
+  int vlan __
+  ip addr
+  
+  switchmode port mode trunk
+  switchmode trunk encapsulation dot1q (?)
+  switchmode port trunk allowed vlan 10,20
+
+4. Перемещая один из ПК из VLAN10 во VLAN20 продемонстрируйте изменение в результатах команды ping. Перемещать ПК можно либо физическим переключением проводов, либо переносом порта в другой VLAN  
+  int fa__
+  switchmode port access
+  switchmode access vlan 10
