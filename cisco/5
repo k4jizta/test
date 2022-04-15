@@ -1,0 +1,22 @@
+1. Настройте IP-адресацию согласно схеме
+  int __
+  ip add 192.168.0.1 255.255.255.0
+  
+2. Настройте 2 магистральных канала между коммутаторами
+  int vlan __
+  ip addr
+  
+3. Настройте VLAN согласно схеме. Проверьте соединения командой Ping
+  int vlan _
+  ip addr __ __
+  no shut
+  
+  int fa__
+  switchmode port access
+  switchmode access vlan 10
+
+4. Разрешите прохождение через транковые каналы только VLAN30
+  switchmode port mode trunk
+  switchmode trunk encapsulation dot1q (?)
+  switchmode port trunk allowed vlan 30
+  
