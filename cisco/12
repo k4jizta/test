@@ -1,0 +1,25 @@
+1. Произвести базовую настройку устройств – настройте имена. Назначьте class в качестве пароля доступа к привилегированному режиму EXEC
+
+
+  
+2. Настроить адресацию согласно таблице. Организовать VPN туннель по протоколу GRE. Проверить локальную связь внутри туннеля 
+ 
+ interface Tunnel0
+ip address 172.16.0.1 255.255.255.0
+ip mtu 1400
+ip tcp adjust-mss 1360
+tunnel source 1.1.1.10
+tunnel destination 2.2.2.10
+ 
+3. Организовать маршрутизацию OSPFv2 по туннелю GRE
+
+I DONT KNOW
+
+4. На любом из устройств защитите паролем консольное подключение и привилегированный режим
+
+  line con0
+    password __
+  enable password __
+  service password-encryption
+  
+  more info:https://www.9tut.com/gre-tunnel-lab
