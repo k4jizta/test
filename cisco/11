@@ -1,0 +1,27 @@
+1. Настройте IP-адресацию. Настройте подключение к маршрутизатору по Telnet.
+  int __
+  ip add 192.168.0.1 255.255.255.0
+  username net_admin privilege 1 password cisco для логина в телнете\ssh
+  line vty 0 5
+  transport input telnet
+  login local
+  end
+  wr
+  
+2. Настройте на маршрутизаторе функцию раздачи IP-адресов по протоколу DHCP. Проверьте получение IP клиентами.
+  ip dhcp excluded-address <router-ip>
+
+  ip dhcp pool POOL-1
+  network 192.168.1.0 255.255.255.0
+  default-router 192.168.1.1
+  dns-server 192.168.1.2
+  domain-name merionet.ru
+  lease 2
+  
+  interface g0/0
+  ip address dhcp
+  
+3. Настройте стандартный именованный ACL-список на маршрутизаторе так чтобы доступ по Telnet был разрешен только с ПК.
+  
+access-list 1 deny any
+access-list 1 permit tcp any host 192.168.0.1 eq telnet
