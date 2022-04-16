@@ -1,0 +1,24 @@
+1. Настройте IP-адресацию по таблице
+2. Настройте протокол eBGP. Проверьте tracert от клиентского ПК до 10.10.10.10
+router bgp 200
+
+  neighbor remote-as 100 (задаём IP соседнего маршрутизатора и его AS).
+  neighbor remote-as 300 (задаём IP соседнего маршрутизатора и его AS).
+  network (задаём все соседние сети).
+  network (задаём все соседние сети).
+  network (задаём все соседние сети).
+3. На любом из устройств установите пароль на привилегированный режим
+  enable password __
+4. На любом из устройств настройте SSH-сервер
+  clock set 17:10:00 28 Aug 2009
+  configure terminal
+  ip domain name test.dom
+  crypto key generate rsa
+  service password-encryption
+  username user privilege 15 password 7 Pa$$w0rd
+  aaa new-model
+  line vty 0 4
+    transport input ssh
+    logging synchronous
+    exec-timeout 60 0
+   
