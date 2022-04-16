@@ -23,5 +23,16 @@
   
 3. Настройте стандартный именованный ACL-список на маршрутизаторе так чтобы доступ по Telnet был разрешен только с ПК.
   
-access-list 1 deny any
-access-list 1 permit tcp any host 192.168.0.1 eq telnet
+access-list 100 deny any
+access-list 100 permit tcp host <pc ip> eq 22 
+
+int s0/0/0 
+ip access-group 100 out
+
+4. Активируйте сетевой доступ на маршрутизаторе R1, чтобы смоделировать веб-сервер с локальной аутентификацией для пользователя admin. Разрешите доступ к веб-серверу только с ноутбука с помощью расширенных ACL.
+ip http server
+ip http authentication local
+username admin privilege 15 secret class
+access-list 100 permit tcp <notebook ip> any eq 80
+
+more info: https://docplayer.com/90709835-Laboratornaya-rabota-nastroyka-i-proverka-rasshirennyh-acl-spiskov-topologiya.html
