@@ -1,0 +1,32 @@
+1. Настройте IP-адресацию по таблице
+2. Настройте и проверьте статический NAT
+
+  Router(config)# ip nat inside source static 192.168.1.5 208.165.100.5
+  Router(config)# interface serial0/0/0
+  Router(config-if)#ip nat inside
+  Router(config-if)#exit
+  Router(config)# interface serial0/1/0
+  Router(config-if)#ip nat outside
+  
+ проверка 
+Router#show ip nat translations 
+Router#show ip nat statistics
+
+3. На любом из устройств установите пароль на консольное подключение
+   line con0
+    password __
+    
+4. На любом из устройств настройте SSH-сервер
+
+  enable
+  clock set 17:10:00 28 Aug 2009
+  configure terminal
+  ip domain name test.dom
+  crypto key generate rsa
+  service password-encryption
+  username user privilege 15 password 7 Pa$$w0rd
+  aaa new-model
+  line vty 0 4
+    transport input ssh
+    logging synchronous
+    exec-timeout 60 0
