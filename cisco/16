@@ -10,6 +10,8 @@ Router(config-if)#exit
 Router(config)# interface serial0/1/0
 Router(config-if)#ip nat outside
 
+http://xgu.ru/wiki/Cisco_NAT
+
 3. На любом из устройств установите пароль на привилегированный режим
 
 enable password __
