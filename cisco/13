@@ -1,0 +1,9 @@
+1. Настроить IP-адресацию согласно таблице
+ int fa_
+ ip addr
+2. Настройте и примените стандартный именованный ACL-список на R1
+
+more info: https://da2001.ru/CCNA_5.02/2/course/files/9.2.1.11%20Packet%20Tracer%20-%20Configuring%20Named%20Standard%20ACLs%20Instructions.pdf
+3. Проверьте список контроля доступа с помощью Telnet
+4. На любом из устройств защитите паролем вход в привилегированный режим
+   enable password __
