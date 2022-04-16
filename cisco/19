@@ -1,0 +1,40 @@
+2.	Настройте IP-адресацию согласно таблице
+3.	Настройте логирование событий с маршрутизатора R1 на сервер syslog. Настройте сервер и клиент NTP
+  ! Настройка отображения текущего времени
+service timestamps log datetime localtime
+!
+! Включение логирования
+logging on
+!
+!
+! Отключения логов на консоль
+logging console critical
+logging monitor debugging
+!
+! Настройка логирования в буфер
+logging buffered informational
+logging buffered 16386
+logging rate-limit 100 except 4
+!
+! Настройка сообщений на сервер syslog
+logging 192.168.1.10
+logging trap debugging
+
+NTP http://xgu.ru/wiki/Cisco_NTP
+
+4.	На любом из устройств установите пароль на консольное подключение
+  line con0
+    password __
+5.	На любом из устройств настройте SSH-сервер
+  enable
+  clock set 17:10:00 28 Aug 2009
+  configure terminal
+  ip domain name test.dom
+  crypto key generate rsa
+  service password-encryption
+  username user privilege 15 password 7 Pa$$w0rd
+  aaa new-model
+  line vty 0 4
+    transport input ssh
+    logging synchronous
+    exec-timeout 60 0
