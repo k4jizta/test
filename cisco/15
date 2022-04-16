@@ -16,6 +16,8 @@ Router#show ip nat statistics
    line con0
     password __
     
+http://xgu.ru/wiki/Cisco_NAT
+
 4. На любом из устройств настройте SSH-сервер
 
   enable
