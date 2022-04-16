@@ -1,0 +1,26 @@
+1. Настройте IP-адресацию по таблице
+
+2.	Настройте и проверьте пул NAT с перегрузкой
+
+https://habr.com/ru/post/351332/
+
+3. На любом из устройств установите пароль на консольное подключение
+
+  int __
+    ip address __
+    no shut
+  line con0
+  
+4. На любом из устройств настройте SSH-сервер
+  enable
+    clock set 17:10:00 28 Aug 2009
+    configure terminal
+    ip domain name test.dom
+    crypto key generate rsa
+    service password-encryption
+    username user privilege 15 password 7 Pa$$w0rd
+    aaa new-model
+    line vty 0 4
+      transport input ssh
+      logging synchronous
+      exec-timeout 60 0
